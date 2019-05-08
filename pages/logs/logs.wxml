@@ -1,0 +1,454 @@
+<!--logs.wxml-->
+<!--滑动导航-->
+
+<scroll-view scroll-x class='scrollx' >
+  <navigator  open-type="redirect" catchtap='hx_door'>校门</navigator>
+  <navigator  open-type="redirect" catchtap='hx_canteen'>餐饮中心</navigator>
+  <navigator  open-type="redirect" catchtap='hx_supermarket'>超市</navigator>
+  <navigator  open-type="redirect" catchtap='hx_teach'>教学楼</navigator>
+  <navigator   open-type="redirect" catchtap='hx_hospital'>医务室</navigator>
+  <navigator  open-type="redirect" catchtap='hx_playground'>体育场</navigator>
+  <navigator  open-type="redirect" catchtap='hx_library'>图书馆</navigator>
+  <navigator  open-type="redirect" catchtap='hx_dorm'>学生公寓</navigator> 
+</scroll-view>
+
+
+
+<!--地图-->
+<!--longitude经度  latitude纬度 -->
+<map id='map' longitude='{{longitude}}' latitude='{{latitude}}'  style="width: 100%; height:{{mapheight}}rpx;" markers='{{markers}}' show-location='true' scale="{{scale}}"  bindcallouttap='click' bindmarkertap='background'></map>
+<!--版权-->
+<view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">Copyright © xxxxx</view>
+</view>
+
+
+
+<!--校门-->
+<!---
+1、wx:if="{{hx_door}判断选择的是不是校门
+2、cover-view，用于在map、video、canvas、camera等原生组件上显示基础原生视图。因为map、video、canvas、camera等组件都是原生组件，层级是最高的，所以要用cover-view组件
+
+-->
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_door}}"> 
+        <cover-view class='hx_bottomtext'>校门</cover-view>
+<view class="page__bd">
+<view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/hxdoor.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">校门</view>      
+                   <cover-image id='door1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+</view>
+</view>
+<!--
+<scroll-view scroll-y class='scrolly'>
+    <cover-view class="hxdoor">
+        <cover-image src='../images/locale/hxdoor.jpg' ></cover-image>
+        <cover-view class='hxdoor_text'>校门</cover-view>
+        <cover-image id='door1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>
+    </cover-view> 
+</scroll-view>
+-->
+</view>
+
+
+
+<!--餐饮-->
+<view class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_canteen}}"> 
+        <cover-view class='hx_bottomtext'>餐饮</cover-view>
+<view class="page__bd">
+<view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+              <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/canteen1.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">天津渤海职业技术学院-餐厅</view>      
+                   <cover-image id='canteen1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator>
+
+                <!-- <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">西侧</view>      
+                   <cover-image id='canteen2' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator> -->
+
+                
+        </view>
+</view>
+
+<!---
+<scroll-view scroll-y class='scrolly' wx:if="true" scroll-into-view="{{to}}">
+    <cover-view class="hxdoor">
+        <cover-image src='../images/locale/hxdoor.jpg' ></cover-image>
+        <cover-view class='hxdoor_text'>餐饮中心 一</cover-view>
+        <cover-image id='canteen1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>
+    </cover-view> 
+
+
+    <cover-view class="hxdoor">
+        <cover-image src='../images/locale/hxdoor.jpg' ></cover-image>
+        <cover-view class='hxdoor_text'>餐饮中心 二</cover-view>
+        <cover-image id='canteen2' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>
+    </cover-view> 
+</scroll-view>
+-->
+</view>
+
+
+<!--超市-->
+<view class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_supermarket}}"> 
+        <cover-view class='hx_bottomtext'>超市</cover-view>
+<view class="page__bd">
+<view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+              <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">天津渤海职业技术学院-校园超市</view>      
+                   <cover-image id='supermarket1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator>
+
+                <!-- <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/supermarket2.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">南门</view>      
+                   <cover-image id='supermarket2' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator> -->
+        </view>
+</view>
+</view>
+
+
+
+<!--华信教学楼-->
+<view class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_teach}}"> 
+        <cover-view class='hx_bottomtext'>教学楼</cover-view>
+<view class="page__bd">
+<view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+              <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/hxteach1.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">天津渤海职业技术学院-教学楼</view>      
+                   <cover-image id='teach1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator>
+
+                <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/hxteach2.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">天津渤海职业技术学院-行政楼</view>      
+                   <cover-image id='teach2' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator>
+
+             <!--  <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/hxteach3.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd"> - 实验楼南楼</view>      
+                   <cover-image id='teach3' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator>
+
+               <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/hxteach4.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd"> - 实验楼北楼</view>      
+                   <cover-image id='teach4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator>
+
+-->
+               <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/hxteach5.jpeg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">实训基地</view>      
+                   <cover-image id='teach5' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+               </navigator> 
+
+        </view>
+</view>
+</view>
+
+
+<!--校医院-->
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_hospital}}"> 
+        <cover-view class='hx_bottomtext'>医务室</cover-view>
+<view class="page__bd">
+<view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">医务室</view>      
+                   <cover-image id='hospital1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+        </view>
+</view>
+</view>  
+
+<!--体育场-->
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_playground}}"> 
+        <cover-view class='hx_bottomtext'>体育场</cover-view>
+<view class="page__bd">
+<view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/playground1.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">操场</view>      
+                   <cover-image id='playground1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+             <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/playground2.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">体育馆</view>      
+                   <cover-image id='playground2' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+        </view>
+</view>
+</view>   
+
+<!--华信图书馆-->
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_library}}"> 
+        <cover-view class='hx_bottomtext'>图书馆</cover-view>
+<view class="page__bd">
+<view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/library1.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">天津渤海职业技术学院-图书馆</view>      
+                   <cover-image id='library1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+        </view>
+</view>
+</view>   
+
+<!--学生公寓-->
+<view  class='bottom' style='bottom:{{bootom}};' wx:if="{{hx_dorm}}"> 
+        <cover-view class='hx_bottomtext'>学生公寓</cover-view>
+<view class="page__bd">
+    <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm12.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 1</view>      
+                   <cover-image id='dorm1' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+                      
+                      
+                      
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm12.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 2</view>      
+                   <cover-image id='dorm2' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 3</view>      
+                   <cover-image id='dorm3' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 5</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 6</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 7</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 8</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 9</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 10</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 11</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 12</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 13</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+           <!-- <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm34.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">学生公寓 - 4</view>      
+                   <cover-image id='dorm4' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>-->
+
+
+
+
+          <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm5.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">天津渤海职业技术学院-活动中心</view>      
+                   <cover-image id='dorm5' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+
+
+           <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../images/locale/dorm6.jpg" class='hx_img'></image>
+                </view>
+                <view class="weui-cell__bd">洗浴中心</view>      
+                   <cover-image id='dorm6' style='width:25px;height:25px' catchtap='go' src='../images/gps.jpg' mode='aspectFit'></cover-image>          
+            </navigator>
+
+      </view>
+    </view>
+</view>   

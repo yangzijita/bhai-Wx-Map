@@ -1,0 +1,57 @@
+/* pages/hxintro/hxintro.wxss */
+/*首页banner*/
+.Hxintro_swiper{
+  height: 400rpx;
+  width: 100%;
+}
+.Banner-image{
+    height: 400rpx;
+    width: 100%;
+}
+/*地图导航*/
+.Hxintro_go{
+   margin-left: 90%;
+   margin-top: -48rpx;
+}
+._Hxintro_go{
+     position: relative; /*子元素的相对定位*/
+     width: 110rpx;
+     height: 110rpx;
+     font-size: 22rpx;
+     background:rgb(68,84,255);
+     color:white;
+     margin-left: -80rpx;
+     border-radius: 50%; /*控制圆形*/
+     font-family: "微软雅黑";
+    /*文字水平垂直居中*/
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+/*文字介绍*/
+.Hxintro_text{
+  width: 90%;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+
+.text1{
+  margin-top: 10rpx; 
+  font-size: 22px;
+  font-family: "楷书";
+  color: #4454ff;
+}
+.text2{
+  display: block;
+  font-size: 16px;
+  color: #4454ff;
+  opacity: 0.5;
+}
+.text3{
+  color: #888888;
+  font-size: 14px;
+  font-family: "楷书";
+}

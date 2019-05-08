@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<!--mode='scaleToFill' 图片缩放，首页背景图-->
+<view class='index_bg'> 
+    <image src = "../images/indexbg.jpg" class='indexbg' mode='scaleToFill'></image>
+</view>
+
+<!--渤 海简介-->
+<view class='hx_intro'>
+  <navigator class='_hx_intro' open-type='navigate' url='../hxintro/hxintro' >
+      <view>渤 海</view>
+      <view>简 介</view>
+  </navigator>
+</view>
+<!--逛逛渤 海-->
+<view class='hx_go'>
+  <navigator class='_hx_go' open-type='navigate' url='../logs/logs' >
+      <view>逛 逛</view>
+      <view>渤 海</view>
+  </navigator>
+  <!--版权-->
+<view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__text">Copyright © xxxxx</view>
+</view>
+</view>
+

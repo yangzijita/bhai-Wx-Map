@@ -1,0 +1,57 @@
+/* 首页背景图 */
+.index_bg{
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+}
+.indexbg{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*渤 海简介位置*/
+.hx_intro{
+   margin-left: 50%;
+   margin-right: 50%;
+   padding-top: 100rpx;
+}
+._hx_intro{
+     position: relative; /*子元素的相对定位*/
+     width: 140rpx;
+     height: 140rpx;
+     font-size: 30rpx;
+     background:rgb(145,171,255);
+     color:white;
+     margin-left: -80rpx;
+     border-radius: 50%; /*控制圆形*/
+     font-family: "楷书";
+    /*文字水平垂直居中*/
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+/*逛逛位置*/
+.hx_go{
+     margin-left: 50%;
+     padding-top: 50rpx;
+}
+._hx_go{
+     position: relative; /*子元素的相对定位*/
+     width: 140rpx;
+     height: 140rpx;
+     font-size: 30rpx;
+     background:rgb(145,171,255);
+     color:white;
+     margin-left: -80rpx;
+     border-radius: 50%; /*控制圆形*/
+     font-family: "楷书";
+    /*文字水平垂直居中*/
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+

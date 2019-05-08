@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/hxintro/hxintro"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#56B1FC",
+    "navigationBarTitleText": "渤海导览",
+    "navigationBarTextStyle": "write"
+  }
+}
